@@ -33,7 +33,7 @@ jobs:
         run: chmod +x mvnw
 
       - name: Run Maven integration tests
-        run: ./mvnw clean test "-Dtest=ApiToKafkaFlowTest,DlqValidationTest,IdempotencyTest,PaymentMockIntegrationTest"
+        run: ./mvnw clean test "-Dtest=ApiToKafkaFlowTest,DlqValidationTest,IdempotencyTest,PaymentMockIntegrationTest,ApiContractValidationTest,OrderEventPayloadValidationTest,MissingFieldDlqTest,PaymentRequestPayloadVerificationTest"
 
       - name: Upload Surefire test reports
         if: always()
