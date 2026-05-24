@@ -1,0 +1,575 @@
+First test run - logs:
+
+PS E:\Kafka-project\event-driven-order-integration-framework> mvn clean test -Dtest=ApiToKafkaFlowTest
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.qa:event-driven-order-integration-framework:jar:0.0.1-SNAPSHOT
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: org.springframework.kafka:spring-kafka-test:jar -> duplicate declaration of version (?) @ line 100, column 15
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] 
+[INFO] ----------< com.qa:event-driven-order-integration-framework >-----------
+[INFO] Building event-driven-order-integration-framework 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.4.1:clean (default-clean) @ event-driven-order-integration-framework ---
+[INFO] Deleting E:\Kafka-project\event-driven-order-integration-framework\target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ event-driven-order-integration-framework ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ event-driven-order-integration-framework ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 16 source files with javac [debug parameters release 17] to target\classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ event-driven-order-integration-framework ---
+[INFO] skip non existing resourceDirectory E:\Kafka-project\event-driven-order-integration-framework\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.14.1:testCompile (default-testCompile) @ event-driven-order-integration-framework ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 3 source files with javac [debug parameters release 17] to target\test-classes
+[INFO] /E:/Kafka-project/event-driven-order-integration-framework/src/test/java/com/qa/event_driven_order_integration_framework/base/BaseIntegrationTest.java: E:\Kafka-project\event-driven-order-integration-framework\src\test\java\com\qa\event_driven_order_integration_framework\base\BaseIntegrationTest.java uses or overrides a deprecated API.
+[INFO] /E:/Kafka-project/event-driven-order-integration-framework/src/test/java/com/qa/event_driven_order_integration_framework/base/BaseIntegrationTest.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] --- surefire:3.5.5:test (default-test) @ event-driven-order-integration-framework ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.qa.event_driven_order_integration_framework.tests.ApiToKafkaFlowTest
+22:13:49.791 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.qa.event_driven_order_integration_framework.tests.ApiToKafkaFlowTest]: ApiToKafkaFlowTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+22:13:49.908 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.qa.event_driven_order_integration_framework.EventDrivenOrderIntegrationFrameworkApplication for test class com.qa.event_driven_order_integration_framework.tests.ApiToKafkaFlowTest
+22:13:50.067 [main] INFO org.testcontainers.images.PullPolicy -- Image pull policy will be performed by: DefaultPullPolicy()
+22:13:50.070 [main] INFO org.testcontainers.utility.ImageNameSubstitutor -- Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+22:13:50.127 [main] INFO org.testcontainers.DockerClientFactory -- Testcontainers version: 1.20.4
+22:13:50.569 [main] INFO org.testcontainers.dockerclient.DockerClientProviderStrategy -- Found Docker environment with local Npipe socket (npipe:////./pipe/docker_engine)
+22:13:50.577 [main] INFO org.testcontainers.DockerClientFactory -- Docker host IP address is localhost
+22:13:50.598 [main] INFO org.testcontainers.DockerClientFactory -- Connected to docker: 
+  Server Version: 29.4.3
+  API Version: 1.54
+  Operating System: Docker Desktop
+  Total Memory: 7751 MB
+  Labels: 
+    com.docker.desktop.address=npipe://\\.\pipe\docker_cli
+22:13:50.644 [main] INFO tc.testcontainers/ryuk:0.11.0 -- Pulling docker image: testcontainers/ryuk:0.11.0. Please be patient; this may take some time but only needs to be done once.
+22:13:51.773 [docker-java-stream--800519189] INFO tc.testcontainers/ryuk:0.11.0 -- Starting to pull image
+22:13:51.790 [docker-java-stream--800519189] INFO tc.testcontainers/ryuk:0.11.0 -- Pulling image layers:  0 pending,  0 downloaded,  0 extracted, (0 bytes/0 bytes)
+22:13:52.569 [docker-java-stream--800519189] INFO tc.testcontainers/ryuk:0.11.0 -- Pulling image layers:  2 pending,  1 downloaded,  0 extracted, (4 MB/? MB)
+22:13:52.654 [docker-java-stream--800519189] INFO tc.testcontainers/ryuk:0.11.0 -- Pulling image layers:  1 pending,  2 downloaded,  0 extracted, (7 MB/? MB)
+22:13:52.840 [docker-java-stream--800519189] INFO tc.testcontainers/ryuk:0.11.0 -- Pulling image layers:  0 pending,  3 downloaded,  0 extracted, (9 MB/10 MB)
+22:13:52.961 [docker-java-stream--800519189] INFO tc.testcontainers/ryuk:0.11.0 -- Pulling image layers:  0 pending,  3 downloaded,  1 extracted, (9 MB/10 MB)
+22:13:53.056 [docker-java-stream--800519189] INFO tc.testcontainers/ryuk:0.11.0 -- Pulling image layers:  0 pending,  3 downloaded,  2 extracted, (10 MB/10 MB)
+22:13:53.098 [docker-java-stream--800519189] INFO tc.testcontainers/ryuk:0.11.0 -- Pulling image layers:  0 pending,  3 downloaded,  3 extracted, (10 MB/10 MB)
+22:13:53.116 [docker-java-stream--800519189] INFO tc.testcontainers/ryuk:0.11.0 -- Pull complete. 3 layers, pulled in 1s (downloaded 10 MB at 10 MB/s)
+22:13:53.116 [main] INFO tc.testcontainers/ryuk:0.11.0 -- Image testcontainers/ryuk:0.11.0 pull took PT2.4714525S
+22:13:53.148 [main] INFO tc.testcontainers/ryuk:0.11.0 -- Creating container for image: testcontainers/ryuk:0.11.0
+22:13:53.231 [main] INFO tc.testcontainers/ryuk:0.11.0 -- Container testcontainers/ryuk:0.11.0 is starting: 8f1fd9e2342c6c11925a9fa9d2f22f83bcfc013c9432724cd4ae53b560ed4b3d
+22:13:53.475 [main] INFO tc.testcontainers/ryuk:0.11.0 -- Container testcontainers/ryuk:0.11.0 started in PT0.3273747S
+22:13:53.480 [main] INFO org.testcontainers.utility.RyukResourceReaper -- Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+22:13:53.480 [main] INFO org.testcontainers.DockerClientFactory -- Checking the system...
+22:13:53.481 [main] INFO org.testcontainers.DockerClientFactory -- ?? Docker server version should be at least 1.6.0
+22:13:53.485 [main] INFO tc.confluentinc/cp-kafka:7.6.1 -- Pulling docker image: confluentinc/cp-kafka:7.6.1. Please be patient; this may take some time but only needs to be done once.
+22:13:54.393 [docker-java-stream-1636927334] INFO tc.confluentinc/cp-kafka:7.6.1 -- Starting to pull image
+22:13:54.394 [docker-java-stream-1636927334] INFO tc.confluentinc/cp-kafka:7.6.1 -- Pulling image layers:  0 pending,  0 downloaded,  0 extracted, (0 bytes/0 bytes)
+22:13:56.292 [docker-java-stream-1636927334] INFO tc.confluentinc/cp-kafka:7.6.1 -- Pulling image layers: 10 pending,  1 downloaded,  0 extracted, (54 MB/? MB)
+22:13:56.437 [docker-java-stream-1636927334] INFO tc.confluentinc/cp-kafka:7.6.1 -- Pulling image layers:  9 pending,  2 downloaded,  0 extracted, (58 MB/? MB)
+22:13:57.108 [docker-java-stream-1636927334] INFO tc.confluentinc/cp-kafka:7.6.1 -- Pulling image layers:  8 pending,  3 downloaded,  0 extracted, (84 MB/? MB)
+22:13:57.239 [docker-java-stream-1636927334] INFO tc.confluentinc/cp-kafka:7.6.1 -- Pulling image layers:  7 pending,  4 downloaded,  0 extracted, (87 MB/? MB)
+22:13:57.382 [docker-java-stream-1636927334] INFO tc.confluentinc/cp-kafka:7.6.1 -- Pulling image layers:  6 pending,  5 downloaded,  0 extracted, (91 MB/? MB)
+22:13:57.581 [docker-java-stream-1636927334] INFO tc.confluentinc/cp-kafka:7.6.1 -- Pulling image layers:  5 pending,  6 downloaded,  0 extracted, (98 MB/? MB)
+22:13:57.811 [docker-java-stream-1636927334] INFO tc.confluentinc/cp-kafka:7.6.1 -- Pulling image layers:  4 pending,  7 downloaded,  0 extracted, (105 MB/? MB)
+22:13:58.227 [docker-java-stream-1636927334] INFO tc.confluentinc/cp-kafka:7.6.1 -- Pulling image layers:  4 pending,  7 downloaded,  1 extracted, (122 MB/? MB)
+22:14:00.111 [docker-java-stream-1636927334] INFO tc.confluentinc/cp-kafka:7.6.1 -- Pulling image layers:  3 pending,  8 downloaded,  1 extracted, (200 MB/? MB)
+22:14:00.715 [docker-java-stream-1636927334] INFO tc.confluentinc/cp-kafka:7.6.1 -- Pulling image layers:  2 pending,  9 downloaded,  1 extracted, (222 MB/? MB)
+22:14:04.495 [docker-java-stream-1636927334] INFO tc.confluentinc/cp-kafka:7.6.1 -- Pulling image layers:  1 pending, 10 downloaded,  1 extracted, (370 MB/? MB)
+22:14:08.870 [docker-java-stream-1636927334] INFO tc.confluentinc/cp-kafka:7.6.1 -- Pulling image layers:  0 pending, 11 downloaded,  1 extracted, (427 MB/431 MB)
+22:14:14.395 [docker-java-stream-1636927334] INFO tc.confluentinc/cp-kafka:7.6.1 -- Pulling image layers:  0 pending, 11 downloaded,  2 extracted, (428 MB/431 MB)
+22:14:14.469 [docker-java-stream-1636927334] INFO tc.confluentinc/cp-kafka:7.6.1 -- Pulling image layers:  0 pending, 11 downloaded,  3 extracted, (428 MB/431 MB)
+22:14:14.500 [docker-java-stream-1636927334] INFO tc.confluentinc/cp-kafka:7.6.1 -- Pulling image layers:  0 pending, 11 downloaded,  4 extracted, (428 MB/431 MB)
+22:14:14.701 [docker-java-stream-1636927334] INFO tc.confluentinc/cp-kafka:7.6.1 -- Pulling image layers:  0 pending, 11 downloaded,  5 extracted, (430 MB/431 MB)
+22:14:14.718 [docker-java-stream-1636927334] INFO tc.confluentinc/cp-kafka:7.6.1 -- Pulling image layers:  0 pending, 11 downloaded,  6 extracted, (430 MB/431 MB)
+22:14:14.744 [docker-java-stream-1636927334] INFO tc.confluentinc/cp-kafka:7.6.1 -- Pulling image layers:  0 pending, 11 downloaded,  7 extracted, (430 MB/431 MB)
+22:14:14.764 [docker-java-stream-1636927334] INFO tc.confluentinc/cp-kafka:7.6.1 -- Pulling image layers:  0 pending, 11 downloaded,  8 extracted, (430 MB/431 MB)
+22:14:14.793 [docker-java-stream-1636927334] INFO tc.confluentinc/cp-kafka:7.6.1 -- Pulling image layers:  0 pending, 11 downloaded,  9 extracted, (430 MB/431 MB)
+22:14:15.408 [docker-java-stream-1636927334] INFO tc.confluentinc/cp-kafka:7.6.1 -- Pulling image layers:  0 pending, 11 downloaded, 10 extracted, (431 MB/431 MB)
+22:14:15.436 [docker-java-stream-1636927334] INFO tc.confluentinc/cp-kafka:7.6.1 -- Pulling image layers:  0 pending, 11 downloaded, 11 extracted, (431 MB/431 MB)
+22:14:15.458 [main] INFO tc.confluentinc/cp-kafka:7.6.1 -- Image confluentinc/cp-kafka:7.6.1 pull took PT21.9729892S
+22:14:15.458 [docker-java-stream-1636927334] INFO tc.confluentinc/cp-kafka:7.6.1 -- Pull complete. 11 layers, pulled in 21s (downloaded 431 MB at 20 MB/s)
+22:14:15.463 [main] INFO tc.confluentinc/cp-kafka:7.6.1 -- Creating container for image: confluentinc/cp-kafka:7.6.1
+22:14:15.701 [main] INFO tc.confluentinc/cp-kafka:7.6.1 -- Container confluentinc/cp-kafka:7.6.1 is starting: 974de92aaac59708ad96368632c2037bc3cc3c2711eda2b1b326e9752ee093cd
+22:14:19.219 [main] INFO tc.confluentinc/cp-kafka:7.6.1 -- Container confluentinc/cp-kafka:7.6.1 started in PT3.7554905S
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::      (v3.5.15-SNAPSHOT)
+
+2026-05-24T22:14:19.547+01:00  INFO 20340 --- [event-driven-order-integration-framework] [           main] c.q.e.tests.ApiToKafkaFlowTest           : Starting ApiToKafkaFlowTest using Java 17.0.11 with PID 20340 (started by soham in E:\Kafka-project\event-driven-order-integration-framework)
+2026-05-24T22:14:19.547+01:00  INFO 20340 --- [event-driven-order-integration-framework] [           main] c.q.e.tests.ApiToKafkaFlowTest           : No active profile set, falling back to 1 default profile: "default"
+2026-05-24T22:14:20.613+01:00  INFO 20340 --- [event-driven-order-integration-framework] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2026-05-24T22:14:20.637+01:00  INFO 20340 --- [event-driven-order-integration-framework] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-24T22:14:20.637+01:00  INFO 20340 --- [event-driven-order-integration-framework] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.54]
+2026-05-24T22:14:20.712+01:00  INFO 20340 --- [event-driven-order-integration-framework] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-05-24T22:14:20.714+01:00  INFO 20340 --- [event-driven-order-integration-framework] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 976 ms
+2026-05-24T22:14:21.824+01:00  INFO 20340 --- [event-driven-order-integration-framework] [           main] o.a.k.clients.admin.AdminClientConfig    : AdminClientConfig values: 
+        auto.include.jmx.reporter = true
+        bootstrap.controllers = []
+        bootstrap.servers = [PLAINTEXT://localhost:53462]
+        client.dns.lookup = use_all_dns_ips
+        client.id = event-driven-order-integration-framework-admin-0
+        connections.max.idle.ms = 300000
+        default.api.timeout.ms = 60000
+        enable.metrics.push = true
+        metadata.max.age.ms = 300000
+        metadata.recovery.strategy = none
+        metric.reporters = []
+        metrics.num.samples = 2
+        metrics.recording.level = INFO
+        metrics.sample.window.ms = 30000
+        receive.buffer.bytes = 65536
+        reconnect.backoff.max.ms = 1000
+        reconnect.backoff.ms = 50
+        request.timeout.ms = 30000
+        retries = 2147483647
+        retry.backoff.max.ms = 1000
+        retry.backoff.ms = 100
+        sasl.client.callback.handler.class = null
+        sasl.jaas.config = null
+        sasl.kerberos.kinit.cmd = /usr/bin/kinit
+        sasl.kerberos.min.time.before.relogin = 60000
+        sasl.kerberos.service.name = null
+        sasl.kerberos.ticket.renew.jitter = 0.05
+        sasl.kerberos.ticket.renew.window.factor = 0.8
+        sasl.login.callback.handler.class = null
+        sasl.login.class = null
+        sasl.login.connect.timeout.ms = null
+        sasl.login.read.timeout.ms = null
+        sasl.login.refresh.buffer.seconds = 300
+        sasl.login.refresh.min.period.seconds = 60
+        sasl.login.refresh.window.factor = 0.8
+        sasl.login.refresh.window.jitter = 0.05
+        sasl.login.retry.backoff.max.ms = 10000
+        sasl.login.retry.backoff.ms = 100
+        sasl.mechanism = GSSAPI
+        sasl.oauthbearer.clock.skew.seconds = 30
+        sasl.oauthbearer.expected.audience = null
+        sasl.oauthbearer.expected.issuer = null
+        sasl.oauthbearer.header.urlencode = false
+        sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+        sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+        sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+        sasl.oauthbearer.jwks.endpoint.url = null
+        sasl.oauthbearer.scope.claim.name = scope
+        sasl.oauthbearer.sub.claim.name = sub
+        sasl.oauthbearer.token.endpoint.url = null
+        security.protocol = PLAINTEXT
+        security.providers = null
+        send.buffer.bytes = 131072
+        socket.connection.setup.timeout.max.ms = 30000
+        socket.connection.setup.timeout.ms = 10000
+        ssl.cipher.suites = null
+        ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+        ssl.endpoint.identification.algorithm = https
+        ssl.engine.factory.class = null
+        ssl.key.password = null
+        ssl.keymanager.algorithm = SunX509
+        ssl.keystore.certificate.chain = null
+        ssl.keystore.key = null
+        ssl.keystore.location = null
+        ssl.keystore.password = null
+        ssl.keystore.type = JKS
+        ssl.protocol = TLSv1.3
+        ssl.provider = null
+        ssl.secure.random.implementation = null
+        ssl.trustmanager.algorithm = PKIX
+        ssl.truststore.certificates = null
+        ssl.truststore.location = null
+        ssl.truststore.password = null
+        ssl.truststore.type = JKS
+
+2026-05-24T22:14:21.944+01:00  INFO 20340 --- [event-driven-order-integration-framework] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.9.2
+2026-05-24T22:14:21.944+01:00  INFO 20340 --- [event-driven-order-integration-framework] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 5e9866f43ab8e7e4
+2026-05-24T22:14:21.944+01:00  INFO 20340 --- [event-driven-order-integration-framework] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1779657261943
+2026-05-24T22:14:22.526+01:00  INFO 20340 --- [event-driven-order-integration-framework] [amework-admin-0] o.a.kafka.common.utils.AppInfoParser     : App info kafka.admin.client for event-driven-order-integration-framework-admin-0 unregistered
+2026-05-24T22:14:22.530+01:00  INFO 20340 --- [event-driven-order-integration-framework] [amework-admin-0] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2026-05-24T22:14:22.530+01:00  INFO 20340 --- [event-driven-order-integration-framework] [amework-admin-0] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2026-05-24T22:14:22.530+01:00  INFO 20340 --- [event-driven-order-integration-framework] [amework-admin-0] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2026-05-24T22:14:22.544+01:00  INFO 20340 --- [event-driven-order-integration-framework] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 53467 (http) with context path '/'
+2026-05-24T22:14:22.567+01:00  INFO 20340 --- [event-driven-order-integration-framework] [           main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+        allow.auto.create.topics = true
+        auto.commit.interval.ms = 5000
+        auto.include.jmx.reporter = true
+        auto.offset.reset = earliest
+        bootstrap.servers = [PLAINTEXT://localhost:53462]
+        check.crcs = true
+        client.dns.lookup = use_all_dns_ips
+        client.id = consumer-order-processing-group-1
+        client.rack = 
+        connections.max.idle.ms = 540000
+        default.api.timeout.ms = 60000
+        enable.auto.commit = false
+        enable.metrics.push = true
+        exclude.internal.topics = true
+        fetch.max.bytes = 52428800
+        fetch.max.wait.ms = 500
+        fetch.min.bytes = 1
+        group.id = order-processing-group
+        group.instance.id = null
+        group.protocol = classic
+        group.remote.assignor = null
+        heartbeat.interval.ms = 3000
+        interceptor.classes = []
+        internal.leave.group.on.close = true
+        internal.throw.on.fetch.stable.offset.unsupported = false
+        isolation.level = read_uncommitted
+        key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+        max.partition.fetch.bytes = 1048576
+        max.poll.interval.ms = 300000
+        max.poll.records = 500
+        metadata.max.age.ms = 300000
+        metadata.recovery.strategy = none
+        metric.reporters = []
+        metrics.num.samples = 2
+        metrics.recording.level = INFO
+        metrics.sample.window.ms = 30000
+        partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+        receive.buffer.bytes = 65536
+        reconnect.backoff.max.ms = 1000
+        reconnect.backoff.ms = 50
+        request.timeout.ms = 30000
+        retry.backoff.max.ms = 1000
+        retry.backoff.ms = 100
+        sasl.client.callback.handler.class = null
+        sasl.jaas.config = null
+        sasl.kerberos.kinit.cmd = /usr/bin/kinit
+        sasl.kerberos.min.time.before.relogin = 60000
+        sasl.kerberos.service.name = null
+        sasl.kerberos.ticket.renew.jitter = 0.05
+        sasl.kerberos.ticket.renew.window.factor = 0.8
+        sasl.login.callback.handler.class = null
+        sasl.login.class = null
+        sasl.login.connect.timeout.ms = null
+        sasl.login.read.timeout.ms = null
+        sasl.login.refresh.buffer.seconds = 300
+        sasl.login.refresh.min.period.seconds = 60
+        sasl.login.refresh.window.factor = 0.8
+        sasl.login.refresh.window.jitter = 0.05
+        sasl.login.retry.backoff.max.ms = 10000
+        sasl.login.retry.backoff.ms = 100
+        sasl.mechanism = GSSAPI
+        sasl.oauthbearer.clock.skew.seconds = 30
+        sasl.oauthbearer.expected.audience = null
+        sasl.oauthbearer.expected.issuer = null
+        sasl.oauthbearer.header.urlencode = false
+        sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+        sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+        sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+        sasl.oauthbearer.jwks.endpoint.url = null
+        sasl.oauthbearer.scope.claim.name = scope
+        sasl.oauthbearer.sub.claim.name = sub
+        sasl.oauthbearer.token.endpoint.url = null
+        security.protocol = PLAINTEXT
+        security.providers = null
+        send.buffer.bytes = 131072
+        session.timeout.ms = 45000
+        socket.connection.setup.timeout.max.ms = 30000
+        socket.connection.setup.timeout.ms = 10000
+        ssl.cipher.suites = null
+        ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+        ssl.endpoint.identification.algorithm = https
+        ssl.engine.factory.class = null
+        ssl.key.password = null
+        ssl.keymanager.algorithm = SunX509
+        ssl.keystore.certificate.chain = null
+        ssl.keystore.key = null
+        ssl.keystore.location = null
+        ssl.keystore.password = null
+        ssl.keystore.type = JKS
+        ssl.protocol = TLSv1.3
+        ssl.provider = null
+        ssl.secure.random.implementation = null
+        ssl.trustmanager.algorithm = PKIX
+        ssl.truststore.certificates = null
+        ssl.truststore.location = null
+        ssl.truststore.password = null
+        ssl.truststore.type = JKS
+        value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+2026-05-24T22:14:22.606+01:00  INFO 20340 --- [event-driven-order-integration-framework] [           main] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2026-05-24T22:14:22.662+01:00  INFO 20340 --- [event-driven-order-integration-framework] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.9.2
+2026-05-24T22:14:22.662+01:00  INFO 20340 --- [event-driven-order-integration-framework] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 5e9866f43ab8e7e4
+2026-05-24T22:14:22.662+01:00  INFO 20340 --- [event-driven-order-integration-framework] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1779657262662
+2026-05-24T22:14:22.664+01:00  INFO 20340 --- [event-driven-order-integration-framework] [           main] o.a.k.c.c.i.ClassicKafkaConsumer         : [Consumer clientId=consumer-order-processing-group-1, groupId=order-processing-group] Subscribed to topic(s): order-events
+2026-05-24T22:14:22.681+01:00  INFO 20340 --- [event-driven-order-integration-framework] [           main] c.q.e.tests.ApiToKafkaFlowTest           : Started ApiToKafkaFlowTest in 3.434 seconds (process running for 33.46)
+2026-05-24T22:14:22.703+01:00  INFO 20340 --- [event-driven-order-integration-framework] [ntainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-order-processing-group-1, groupId=order-processing-group] Cluster ID: QihUQ2J_T66wpdEiKozTlA
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended2026-05-24T22:14:22.853+01:00  INFO 20340 --- [event-driven-order-integration-framework] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-order-processing-group-1, groupId=order-processing-group] Discovered group coordinator localhost:53462 (id: 2147483646 rack: null)
+
+2026-05-24T22:14:22.859+01:00  INFO 20340 --- [event-driven-order-integration-framework] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-order-processing-group-1, groupId=order-processing-group] (Re-)joining group
+2026-05-24T22:14:22.902+01:00  INFO 20340 --- [event-driven-order-integration-framework] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-order-processing-group-1, groupId=order-processing-group] Request joining group due to: need to re-join with the given member-id: consumer-order-processing-group-1-76e57835-920c-4cb8-8564-0a4b4804a80b
+2026-05-24T22:14:22.903+01:00  INFO 20340 --- [event-driven-order-integration-framework] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-order-processing-group-1, groupId=order-processing-group] (Re-)joining group
+2026-05-24T22:14:22.929+01:00  INFO 20340 --- [event-driven-order-integration-framework] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-order-processing-group-1, groupId=order-processing-group] Successfully joined group with generation Generation{generationId=1, memberId='consumer-order-processing-group-1-76e57835-920c-4cb8-8564-0a4b4804a80b', protocol='range'}
+2026-05-24T22:14:22.938+01:00  INFO 20340 --- [event-driven-order-integration-framework] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-order-processing-group-1, groupId=order-processing-group] Finished assignment for group at generation 1: {consumer-order-processing-group-1-76e57835-920c-4cb8-8564-0a4b4804a80b=Assignment(partitions=[order-events-0])}
+2026-05-24T22:14:23.000+01:00  INFO 20340 --- [event-driven-order-integration-framework] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-order-processing-group-1, groupId=order-processing-group] Successfully synced group in generation Generation{generationId=1, memberId='consumer-order-processing-group-1-76e57835-920c-4cb8-8564-0a4b4804a80b', protocol='range'}
+2026-05-24T22:14:23.001+01:00  INFO 20340 --- [event-driven-order-integration-framework] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-order-processing-group-1, groupId=order-processing-group] Notifying assignor about the new Assignment(partitions=[order-events-0])
+2026-05-24T22:14:23.010+01:00  INFO 20340 --- [event-driven-order-integration-framework] [ntainer#0-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-order-processing-group-1, groupId=order-processing-group] Adding newly assigned partitions: order-events-0
+2026-05-24T22:14:23.038+01:00  INFO 20340 --- [event-driven-order-integration-framework] [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-order-processing-group-1, groupId=order-processing-group] Found no committed offset for partition order-events-0
+2026-05-24T22:14:23.063+01:00  INFO 20340 --- [event-driven-order-integration-framework] [ntainer#0-0-C-1] o.a.k.c.c.internals.SubscriptionState    : [Consumer clientId=consumer-order-processing-group-1, groupId=order-processing-group] Resetting offset for partition order-events-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:53462 (id: 1 rack: null)], epoch=0}}.
+2026-05-24T22:14:23.066+01:00  INFO 20340 --- [event-driven-order-integration-framework] [ntainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : order-processing-group: partitions assigned: [order-events-0]
+2026-05-24T22:14:24.655+01:00  INFO 20340 --- [event-driven-order-integration-framework] [o-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-24T22:14:24.655+01:00  INFO 20340 --- [event-driven-order-integration-framework] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-05-24T22:14:24.655+01:00  INFO 20340 --- [event-driven-order-integration-framework] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-05-24T22:14:24.747+01:00  INFO 20340 --- [event-driven-order-integration-framework] [o-auto-1-exec-1] o.a.k.clients.producer.ProducerConfig    : ProducerConfig values: 
+        acks = -1
+        auto.include.jmx.reporter = true
+        batch.size = 16384
+        bootstrap.servers = [PLAINTEXT://localhost:53462]
+        buffer.memory = 33554432
+        client.dns.lookup = use_all_dns_ips
+        client.id = event-driven-order-integration-framework-producer-1
+        compression.gzip.level = -1
+        compression.lz4.level = 9
+        compression.type = none
+        compression.zstd.level = 3
+        connections.max.idle.ms = 540000
+        delivery.timeout.ms = 120000
+        enable.idempotence = true
+        enable.metrics.push = true
+        interceptor.classes = []
+        key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+        linger.ms = 0
+        max.block.ms = 60000
+        max.in.flight.requests.per.connection = 5
+        max.request.size = 1048576
+        metadata.max.age.ms = 300000
+        metadata.max.idle.ms = 300000
+        metadata.recovery.strategy = none
+        metric.reporters = []
+        metrics.num.samples = 2
+        metrics.recording.level = INFO
+        metrics.sample.window.ms = 30000
+        partitioner.adaptive.partitioning.enable = true
+        partitioner.availability.timeout.ms = 0
+        partitioner.class = null
+        partitioner.ignore.keys = false
+        receive.buffer.bytes = 32768
+        reconnect.backoff.max.ms = 1000
+        reconnect.backoff.ms = 50
+        request.timeout.ms = 30000
+        retries = 3
+        retry.backoff.max.ms = 1000
+        retry.backoff.ms = 100
+        sasl.client.callback.handler.class = null
+        sasl.jaas.config = null
+        sasl.kerberos.kinit.cmd = /usr/bin/kinit
+        sasl.kerberos.min.time.before.relogin = 60000
+        sasl.kerberos.service.name = null
+        sasl.kerberos.ticket.renew.jitter = 0.05
+        sasl.kerberos.ticket.renew.window.factor = 0.8
+        sasl.login.callback.handler.class = null
+        sasl.login.class = null
+        sasl.login.connect.timeout.ms = null
+        sasl.login.read.timeout.ms = null
+        sasl.login.refresh.buffer.seconds = 300
+        sasl.login.refresh.min.period.seconds = 60
+        sasl.login.refresh.window.factor = 0.8
+        sasl.login.refresh.window.jitter = 0.05
+        sasl.login.retry.backoff.max.ms = 10000
+        sasl.login.retry.backoff.ms = 100
+        sasl.mechanism = GSSAPI
+        sasl.oauthbearer.clock.skew.seconds = 30
+        sasl.oauthbearer.expected.audience = null
+        sasl.oauthbearer.expected.issuer = null
+        sasl.oauthbearer.header.urlencode = false
+        sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+        sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+        sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+        sasl.oauthbearer.jwks.endpoint.url = null
+        sasl.oauthbearer.scope.claim.name = scope
+        sasl.oauthbearer.sub.claim.name = sub
+        sasl.oauthbearer.token.endpoint.url = null
+        security.protocol = PLAINTEXT
+        security.providers = null
+        send.buffer.bytes = 131072
+        socket.connection.setup.timeout.max.ms = 30000
+        socket.connection.setup.timeout.ms = 10000
+        ssl.cipher.suites = null
+        ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+        ssl.endpoint.identification.algorithm = https
+        ssl.engine.factory.class = null
+        ssl.key.password = null
+        ssl.keymanager.algorithm = SunX509
+        ssl.keystore.certificate.chain = null
+        ssl.keystore.key = null
+        ssl.keystore.location = null
+        ssl.keystore.password = null
+        ssl.keystore.type = JKS
+        ssl.protocol = TLSv1.3
+        ssl.provider = null
+        ssl.secure.random.implementation = null
+        ssl.trustmanager.algorithm = PKIX
+        ssl.truststore.certificates = null
+        ssl.truststore.location = null
+        ssl.truststore.password = null
+        ssl.truststore.type = JKS
+        transaction.timeout.ms = 60000
+        transactional.id = null
+        value.serializer = class org.springframework.kafka.support.serializer.JsonSerializer
+
+2026-05-24T22:14:24.747+01:00  INFO 20340 --- [event-driven-order-integration-framework] [o-auto-1-exec-1] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2026-05-24T22:14:24.758+01:00  INFO 20340 --- [event-driven-order-integration-framework] [o-auto-1-exec-1] o.a.k.clients.producer.KafkaProducer     : [Producer clientId=event-driven-order-integration-framework-producer-1] Instantiated an idempotent producer.
+2026-05-24T22:14:24.774+01:00  INFO 20340 --- [event-driven-order-integration-framework] [o-auto-1-exec-1] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.9.2
+2026-05-24T22:14:24.774+01:00  INFO 20340 --- [event-driven-order-integration-framework] [o-auto-1-exec-1] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 5e9866f43ab8e7e4
+2026-05-24T22:14:24.774+01:00  INFO 20340 --- [event-driven-order-integration-framework] [o-auto-1-exec-1] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1779657264774
+2026-05-24T22:14:24.791+01:00  INFO 20340 --- [event-driven-order-integration-framework] [work-producer-1] org.apache.kafka.clients.Metadata        : [Producer clientId=event-driven-order-integration-framework-producer-1] Cluster ID: QihUQ2J_T66wpdEiKozTlA
+2026-05-24T22:14:24.864+01:00  INFO 20340 --- [event-driven-order-integration-framework] [           main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+        allow.auto.create.topics = true
+        auto.commit.interval.ms = 5000
+        auto.include.jmx.reporter = true
+        auto.offset.reset = earliest
+        bootstrap.servers = [PLAINTEXT://localhost:53462]
+        check.crcs = true
+        client.dns.lookup = use_all_dns_ips
+        client.id = consumer-test-consumer-f03d5a6f-648c-4c0e-97c4-371d1917d59c-2
+        client.rack = 
+        connections.max.idle.ms = 540000
+        default.api.timeout.ms = 60000
+        enable.auto.commit = true
+        enable.metrics.push = true
+        exclude.internal.topics = true
+        fetch.max.bytes = 52428800
+        fetch.max.wait.ms = 500
+        fetch.min.bytes = 1
+        group.id = test-consumer-f03d5a6f-648c-4c0e-97c4-371d1917d59c
+        group.instance.id = null
+        group.protocol = classic
+        group.remote.assignor = null
+        heartbeat.interval.ms = 3000
+        interceptor.classes = []
+        internal.leave.group.on.close = true
+        internal.throw.on.fetch.stable.offset.unsupported = false
+        isolation.level = read_uncommitted
+        key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+        max.partition.fetch.bytes = 1048576
+        max.poll.interval.ms = 300000
+        max.poll.records = 500
+        metadata.max.age.ms = 300000
+        metadata.recovery.strategy = none
+        metric.reporters = []
+        metrics.num.samples = 2
+        metrics.recording.level = INFO
+        metrics.sample.window.ms = 30000
+        partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+        receive.buffer.bytes = 65536
+        reconnect.backoff.max.ms = 1000
+        reconnect.backoff.ms = 50
+        request.timeout.ms = 30000
+        retry.backoff.max.ms = 1000
+        retry.backoff.ms = 100
+        sasl.client.callback.handler.class = null
+        sasl.jaas.config = null
+        sasl.kerberos.kinit.cmd = /usr/bin/kinit
+        sasl.kerberos.min.time.before.relogin = 60000
+        sasl.kerberos.service.name = null
+        sasl.kerberos.ticket.renew.jitter = 0.05
+        sasl.kerberos.ticket.renew.window.factor = 0.8
+        sasl.login.callback.handler.class = null
+        sasl.login.class = null
+        sasl.login.connect.timeout.ms = null
+        sasl.login.read.timeout.ms = null
+        sasl.login.refresh.buffer.seconds = 300
+        sasl.login.refresh.min.period.seconds = 60
+        sasl.login.refresh.window.factor = 0.8
+        sasl.login.refresh.window.jitter = 0.05
+        sasl.login.retry.backoff.max.ms = 10000
+        sasl.login.retry.backoff.ms = 100
+        sasl.mechanism = GSSAPI
+        sasl.oauthbearer.clock.skew.seconds = 30
+        sasl.oauthbearer.expected.audience = null
+        sasl.oauthbearer.expected.issuer = null
+        sasl.oauthbearer.header.urlencode = false
+        sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+        sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+        sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+        sasl.oauthbearer.jwks.endpoint.url = null
+        sasl.oauthbearer.scope.claim.name = scope
+        sasl.oauthbearer.sub.claim.name = sub
+        sasl.oauthbearer.token.endpoint.url = null
+        security.protocol = PLAINTEXT
+        security.providers = null
+        send.buffer.bytes = 131072
+        session.timeout.ms = 45000
+        socket.connection.setup.timeout.max.ms = 30000
+        socket.connection.setup.timeout.ms = 10000
+        ssl.cipher.suites = null
+        ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+        ssl.endpoint.identification.algorithm = https
+        ssl.engine.factory.class = null
+        ssl.key.password = null
+        ssl.keymanager.algorithm = SunX509
+        ssl.keystore.certificate.chain = null
+        ssl.keystore.key = null
+        ssl.keystore.location = null
+        ssl.keystore.password = null
+        ssl.keystore.type = JKS
+        ssl.protocol = TLSv1.3
+        ssl.provider = null
+        ssl.secure.random.implementation = null
+        ssl.trustmanager.algorithm = PKIX
+        ssl.truststore.certificates = null
+        ssl.truststore.location = null
+        ssl.truststore.password = null
+        ssl.truststore.type = JKS
+        value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+2026-05-24T22:14:24.865+01:00  INFO 20340 --- [event-driven-order-integration-framework] [           main] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2026-05-24T22:14:24.871+01:00  INFO 20340 --- [event-driven-order-integration-framework] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.9.2
+2026-05-24T22:14:24.872+01:00  INFO 20340 --- [event-driven-order-integration-framework] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 5e9866f43ab8e7e4
+2026-05-24T22:14:24.872+01:00  INFO 20340 --- [event-driven-order-integration-framework] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1779657264871
+2026-05-24T22:14:24.872+01:00  INFO 20340 --- [event-driven-order-integration-framework] [           main] o.a.k.c.c.i.ClassicKafkaConsumer         : [Consumer clientId=consumer-test-consumer-f03d5a6f-648c-4c0e-97c4-371d1917d59c-2, groupId=test-consumer-f03d5a6f-648c-4c0e-97c4-371d1917d59c] Subscribed to topic(s): processed-orders
+2026-05-24T22:14:24.909+01:00  INFO 20340 --- [event-driven-order-integration-framework] [work-producer-1] o.a.k.c.p.internals.TransactionManager   : [Producer clientId=event-driven-order-integration-framework-producer-1] ProducerId set to 0 with epoch 0
+Consumed order event for orderId: ORD-1779657263584
+Published processed order event for orderId: ORD-1779657263584
+2026-05-24T22:14:25.390+01:00  INFO 20340 --- [event-driven-order-integration-framework] [aitility-thread] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-test-consumer-f03d5a6f-648c-4c0e-97c4-371d1917d59c-2, groupId=test-consumer-f03d5a6f-648c-4c0e-97c4-371d1917d59c] Cluster ID: QihUQ2J_T66wpdEiKozTlA
+2026-05-24T22:14:25.391+01:00  INFO 20340 --- [event-driven-order-integration-framework] [aitility-thread] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-test-consumer-f03d5a6f-648c-4c0e-97c4-371d1917d59c-2, groupId=test-consumer-f03d5a6f-648c-4c0e-97c4-371d1917d59c] Discovered group coordinator localhost:53462 (id: 2147483646 rack: null)
+2026-05-24T22:14:25.395+01:00  INFO 20340 --- [event-driven-order-integration-framework] [aitility-thread] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-test-consumer-f03d5a6f-648c-4c0e-97c4-371d1917d59c-2, groupId=test-consumer-f03d5a6f-648c-4c0e-97c4-371d1917d59c] (Re-)joining group
+2026-05-24T22:14:25.403+01:00  INFO 20340 --- [event-driven-order-integration-framework] [aitility-thread] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-test-consumer-f03d5a6f-648c-4c0e-97c4-371d1917d59c-2, groupId=test-consumer-f03d5a6f-648c-4c0e-97c4-371d1917d59c] Request joining group due to: need to re-join with the given member-id: consumer-test-consumer-f03d5a6f-648c-4c0e-97c4-371d1917d59c-2-59c715a6-b7dd-468d-a02a-b3f359f1fb5b
+2026-05-24T22:14:25.403+01:00  INFO 20340 --- [event-driven-order-integration-framework] [aitility-thread] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-test-consumer-f03d5a6f-648c-4c0e-97c4-371d1917d59c-2, groupId=test-consumer-f03d5a6f-648c-4c0e-97c4-371d1917d59c] (Re-)joining group
+2026-05-24T22:14:25.408+01:00  INFO 20340 --- [event-driven-order-integration-framework] [aitility-thread] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-test-consumer-f03d5a6f-648c-4c0e-97c4-371d1917d59c-2, groupId=test-consumer-f03d5a6f-648c-4c0e-97c4-371d1917d59c] Successfully joined group with generation Generation{generationId=1, memberId='consumer-test-consumer-f03d5a6f-648c-4c0e-97c4-371d1917d59c-2-59c715a6-b7dd-468d-a02a-b3f359f1fb5b', protocol='range'}
+2026-05-24T22:14:25.409+01:00  INFO 20340 --- [event-driven-order-integration-framework] [aitility-thread] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-test-consumer-f03d5a6f-648c-4c0e-97c4-371d1917d59c-2, groupId=test-consumer-f03d5a6f-648c-4c0e-97c4-371d1917d59c] Finished assignment for group at generation 1: {consumer-test-consumer-f03d5a6f-648c-4c0e-97c4-371d1917d59c-2-59c715a6-b7dd-468d-a02a-b3f359f1fb5b=Assignment(partitions=[processed-orders-0])}
+2026-05-24T22:14:25.413+01:00  INFO 20340 --- [event-driven-order-integration-framework] [aitility-thread] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-test-consumer-f03d5a6f-648c-4c0e-97c4-371d1917d59c-2, groupId=test-consumer-f03d5a6f-648c-4c0e-97c4-371d1917d59c] Successfully synced group in generation Generation{generationId=1, memberId='consumer-test-consumer-f03d5a6f-648c-4c0e-97c4-371d1917d59c-2-59c715a6-b7dd-468d-a02a-b3f359f1fb5b', protocol='range'}
+2026-05-24T22:14:25.414+01:00  INFO 20340 --- [event-driven-order-integration-framework] [aitility-thread] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-test-consumer-f03d5a6f-648c-4c0e-97c4-371d1917d59c-2, groupId=test-consumer-f03d5a6f-648c-4c0e-97c4-371d1917d59c] Notifying assignor about the new Assignment(partitions=[processed-orders-0])
+2026-05-24T22:14:25.414+01:00  INFO 20340 --- [event-driven-order-integration-framework] [aitility-thread] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-test-consumer-f03d5a6f-648c-4c0e-97c4-371d1917d59c-2, groupId=test-consumer-f03d5a6f-648c-4c0e-97c4-371d1917d59c] Adding newly assigned partitions: processed-orders-0
+2026-05-24T22:14:25.416+01:00  INFO 20340 --- [event-driven-order-integration-framework] [aitility-thread] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-test-consumer-f03d5a6f-648c-4c0e-97c4-371d1917d59c-2, groupId=test-consumer-f03d5a6f-648c-4c0e-97c4-371d1917d59c] Found no committed offset for partition processed-orders-0
+2026-05-24T22:14:25.423+01:00  INFO 20340 --- [event-driven-order-integration-framework] [aitility-thread] o.a.k.c.c.internals.SubscriptionState    : [Consumer clientId=consumer-test-consumer-f03d5a6f-648c-4c0e-97c4-371d1917d59c-2, groupId=test-consumer-f03d5a6f-648c-4c0e-97c4-371d1917d59c] Resetting offset for partition processed-orders-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:53462 (id: 1 rack: null)], epoch=0}}.
+2026-05-24T22:14:25.434+01:00  INFO 20340 --- [event-driven-order-integration-framework] [           main] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-test-consumer-f03d5a6f-648c-4c0e-97c4-371d1917d59c-2, groupId=test-consumer-f03d5a6f-648c-4c0e-97c4-371d1917d59c] Revoke previously assigned partitions processed-orders-0
+2026-05-24T22:14:25.434+01:00  INFO 20340 --- [event-driven-order-integration-framework] [           main] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-test-consumer-f03d5a6f-648c-4c0e-97c4-371d1917d59c-2, groupId=test-consumer-f03d5a6f-648c-4c0e-97c4-371d1917d59c] Member consumer-test-consumer-f03d5a6f-648c-4c0e-97c4-371d1917d59c-2-59c715a6-b7dd-468d-a02a-b3f359f1fb5b sending LeaveGroup request to coordinator localhost:53462 (id: 2147483646 rack: null) due to the consumer is being closed
+2026-05-24T22:14:25.435+01:00  INFO 20340 --- [event-driven-order-integration-framework] [           main] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-test-consumer-f03d5a6f-648c-4c0e-97c4-371d1917d59c-2, groupId=test-consumer-f03d5a6f-648c-4c0e-97c4-371d1917d59c] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-05-24T22:14:25.435+01:00  INFO 20340 --- [event-driven-order-integration-framework] [           main] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-test-consumer-f03d5a6f-648c-4c0e-97c4-371d1917d59c-2, groupId=test-consumer-f03d5a6f-648c-4c0e-97c4-371d1917d59c] Request joining group due to: consumer pro-actively leaving the group
+2026-05-24T22:14:25.933+01:00  INFO 20340 --- [event-driven-order-integration-framework] [           main] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2026-05-24T22:14:25.933+01:00  INFO 20340 --- [event-driven-order-integration-framework] [           main] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2026-05-24T22:14:25.933+01:00  INFO 20340 --- [event-driven-order-integration-framework] [           main] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2026-05-24T22:14:25.933+01:00  INFO 20340 --- [event-driven-order-integration-framework] [           main] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2026-05-24T22:14:25.936+01:00  INFO 20340 --- [event-driven-order-integration-framework] [           main] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-test-consumer-f03d5a6f-648c-4c0e-97c4-371d1917d59c-2 unregistered
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 36.25 s -- in com.qa.event_driven_order_integration_framework.tests.ApiToKafkaFlowTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  41.159 s
+[INFO] Finished at: 2026-05-24T22:14:27+01:00
+[INFO] ------------------------------------------------------------------------
+PS E:\Kafka-project\event-driven-order-integration-framework> 

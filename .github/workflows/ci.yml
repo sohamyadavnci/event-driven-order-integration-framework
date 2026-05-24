@@ -1,0 +1,40 @@
+name: Event-Driven Integration Tests
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+    branches:
+      - main
+      - master
+
+jobs:
+  integration-tests:
+    name: Run API, Kafka and Integration Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+          cache: maven
+
+      - name: Verify Docker availability
+        run: docker version
+
+      - name: Run Maven integration tests
+        run: ./mvnw clean test "-Dtest=ApiToKafkaFlowTest,DlqValidationTest,IdempotencyTest,PaymentMockIntegrationTest"
+
+      - name: Upload Surefire test reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: surefire-test-reports
+          path: target/surefire-reports
